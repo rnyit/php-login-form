@@ -45,7 +45,7 @@ if(isset($_POST['submitbutton'])) {
     <meta charset="utf-8">
     <title>PHP Login Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../files/style.css?v=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css?v=1.0">
   </head>
   <body>
     <div id="form">
