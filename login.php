@@ -32,10 +32,10 @@ if(isset($_POST['submitbutton'])) {
     header('Location: dashboard.php');
     // Terminate the current script.
     exit();
-	  } else {
+    } else {
       // Session variable.
-	    $_SESSION['message'] = 'Access denied.';
-	  }
+      $_SESSION['message'] = 'Access denied.';
+    }
   }
 }
 ?>
