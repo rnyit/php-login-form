@@ -44,21 +44,17 @@ if(isset($_POST['submitbutton'])) {
   <head>
     <meta charset="utf-8">
     <title>PHP Login Form</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css?v=1.0">
   </head>
   <body>
-    <div id="form">
-      <form method="POST">
-        <?php if(isset($_SESSION['message'])) { ?><div class="form-message"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></div><div class="br"></div><?php } ?>
-        <h1>PHP Login Form</h1>
-        <div class="br"></div>
-        <input type="text" name="username" placeholder="Username" required>
-        <div class="br"></div>
-        <input type="password" name="password" placeholder="Password" required>
-        <div class="br"></div>
-        <input type="submit" name="submitbutton" value="Submit">
-      </form>
-    </div>
+    <form method="POST">
+      <?php if(isset($_SESSION['message'])) { ?><span><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></span><br><?php } ?>
+      <h1>PHP Login Form</h1>
+      <br>
+      <input type="text" name="username" placeholder="Username" required>
+      <br>
+      <input type="password" name="password" placeholder="Password" required>
+      <br>
+      <input type="submit" name="submitbutton" value="Submit">
+    </form>
   </body>
 </html>
