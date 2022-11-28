@@ -1,9 +1,7 @@
 <?php
-// Start new or resume existing session.
-session_start();
-
-// Unset a given variable, in this case the username.
-unset($_SESSION['user']);
+// Unset the cookie.
+unset($_COOKIE['username']);
+setcookie('username', null, -1, '/');
 
 // Session variable.
 $_SESSION['message'] = 'Logged out.';
