@@ -35,7 +35,7 @@ if(isset($_POST['submitbutton'])) {
       } else {
         $session_time = time() + (60 * 60);
       }
-      setcookie('username', $username, $session_time, '/');
+      setcookie('username', $username, $session_time, url_path);
       
       // Redirect to another location.
       header('Location: dashboard.php');
