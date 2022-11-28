@@ -30,7 +30,12 @@ if(isset($_POST['submitbutton'])) {
     // Check if username and password are correct.
     if($username == username && $password == password) {
       // Set the cookie.
-      setcookie('username', $username, time() + 60 * 60 * 24 * 365, '/');
+      if(isset($_POST['kmli'])) {
+        $session_time = time() + (60 * 60 * 24 * 365);
+      } else {
+        $session_time = time() + (60 * 60));
+      }
+      setcookie('username', $username, $session_time, '/');
       
       // Redirect to another location.
       header('Location: dashboard.php');
