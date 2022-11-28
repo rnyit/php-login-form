@@ -33,7 +33,7 @@ if(isset($_POST['submitbutton'])) {
       if(isset($_POST['kmli'])) {
         $session_time = time() + (60 * 60 * 24 * 365);
       } else {
-        $session_time = time() + (60 * 60));
+        $session_time = time() + (60 * 60);
       }
       setcookie('username', $username, $session_time, '/');
       
