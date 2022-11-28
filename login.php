@@ -1,5 +1,5 @@
 <?php
-// Required file.
+// Required file(s).
 require 'config.php';
 
 // Start new or resume existing session.
@@ -9,6 +9,7 @@ session_start();
 if(isset($_SESSION['user'])) {
   // Redirect to another location.
   header('Location: dashboard.php');
+  
   // Terminate the current script.
   exit();
 }
@@ -17,8 +18,10 @@ if(isset($_SESSION['user'])) {
 if(isset($_POST['submitbutton'])) {
   // Get the input username data.
   $username = strtolower($_POST['username']);
+  
   // Get the input password data.
   $password = $_POST['password'];
+  
   // Check if the input fields are empty.
   if(empty($username) || empty($password)) {
     // Session variable.
@@ -28,8 +31,10 @@ if(isset($_POST['submitbutton'])) {
     if($username == username && $password == password) {
       // Session variable.
       $_SESSION['user'] = $username;
+      
       // Redirect to another location.
       header('Location: dashboard.php');
+      
       // Terminate the current script.
       exit();
     } else {
