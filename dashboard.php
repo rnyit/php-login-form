@@ -2,6 +2,9 @@
 // Required file(s).
 require 'config.php';
 
+// Keep a session for notifications.
+session_start();
+
 // Check if not a user is logged in.
 if(!isset($_COOKIE['username'])) {
   // Session variable.
