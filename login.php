@@ -2,11 +2,8 @@
 // Required file(s).
 require 'config.php';
 
-// Start new or resume existing session.
-session_start();
-
 // Check if the user is already logged in.
-if(isset($_SESSION['user'])) {
+if(isset($_COOKIE['username'])) {
   // Redirect to another location.
   header('Location: dashboard.php');
   
@@ -29,8 +26,8 @@ if(isset($_POST['submitbutton'])) {
   } else {
     // Check if username and password are correct.
     if($username == username && $password == password) {
-      // Session variable.
-      $_SESSION['user'] = $username;
+      // Set the cookie.
+      setcookie('username', $username, time() + 60 * 60 * 24 * 365, '/');
       
       // Redirect to another location.
       header('Location: dashboard.php');
