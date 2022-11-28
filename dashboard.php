@@ -2,11 +2,8 @@
 // Required file(s).
 require 'config.php';
 
-// Start new or resume existing session.
-session_start();
-
 // Check if not a user is logged in.
-if(!isset($_SESSION['user'])) {
+if(!isset($_COOKIE['username'])) {
   // Session variable.
   $_SESSION['message'] = 'Access is required.';
   
@@ -24,7 +21,7 @@ if(!isset($_SESSION['user'])) {
     <title>Dashboard</title>
   </head>
   <body>
-    <p>Hello, <?php echo $_SESSION['user']; ?></p>
+    <p>Hello, <?php echo $_COOKIE['username']; ?></p>
     <p><a href="dashboard.php">[Dashboard]</a> <a href="logout.php">[Logout]</a></p>
   </body>
 </html>
