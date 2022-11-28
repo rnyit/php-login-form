@@ -56,6 +56,9 @@ if(isset($_POST['submitbutton'])) {
       <br>
       <input type="password" name="password" placeholder="Password" required>
       <br>
+      <input type="checkbox" name="kmli">
+      <span>Keep Me Logged In</span>
+      <br>
       <input type="submit" name="submitbutton" value="Submit">
     </form>
   </body>
