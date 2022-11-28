@@ -26,12 +26,12 @@ if(isset($_POST['submitbutton'])) {
   } else {
     // Check if username and password are correct.
     if($username == username && $password == password) {
-    // Session variable.
-    $_SESSION['user'] = $username;
-    // Redirect to another location.
-    header('Location: dashboard.php');
-    // Terminate the current script.
-    exit();
+      // Session variable.
+      $_SESSION['user'] = $username;
+      // Redirect to another location.
+      header('Location: dashboard.php');
+      // Terminate the current script.
+      exit();
     } else {
       // Session variable.
       $_SESSION['message'] = 'Access denied.';
