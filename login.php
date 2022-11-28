@@ -2,6 +2,9 @@
 // Required file(s).
 require 'config.php';
 
+// Keep a session for notifications.
+session_start();
+
 // Check if the user is already logged in.
 if(isset($_COOKIE['username'])) {
   // Redirect to another location.
