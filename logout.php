@@ -1,4 +1,7 @@
 <?php
+// Keep a session for notifications.
+session_start();
+
 // Unset the cookie.
 unset($_COOKIE['username']);
 setcookie('username', null, -1, '/');
