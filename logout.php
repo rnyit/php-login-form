@@ -1,10 +1,13 @@
 <?php
+// Required file(s).
+require 'config.php';
+
 // Keep a session for notifications.
 session_start();
 
 // Unset the cookie.
 unset($_COOKIE['username']);
-setcookie('username', null, -1, '/');
+setcookie('username', null, -1, url_path);
 
 // Session variable.
 $_SESSION['message'] = 'Logged out.';
