@@ -7,5 +7,5 @@
 define('username', 'user');
 define('password', 'Pass321');
 
-// Set admin url path.
+// Set the url path.
 define('url_path', '/');
