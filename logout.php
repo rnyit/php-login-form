@@ -2,14 +2,14 @@
 // Required file(s).
 require 'config.php';
 
-// Keep a session for notifications.
+// Start new or resume existing session.
 session_start();
 
 // Unset the cookie.
 unset($_COOKIE['username']);
 setcookie('username', null, -1, url_path);
 
-// Session variable.
+// Session variable message.
 $_SESSION['message'] = 'Logged out.';
 
 // Redirect to another location.
