@@ -37,12 +37,12 @@ if(isset($_POST['submitbutton'])) {
       // Check if 'Keep Me Logged In' checkbox is enabled.
       if(isset($_POST['kmli'])) {
         
-        // Set it to 1 year.
+        // Set session time for 1 year.
         $session_time = time() + (60 * 60 * 24 * 365);
       
       } else {
         
-        // Set it to a short period of time.
+        // Set session time for a short period of time.
         $session_time = time() + (60 * 60);
         
       }
