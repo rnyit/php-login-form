@@ -2,39 +2,52 @@
 // Required file(s).
 require 'config.php';
 
-// Keep a session for notifications.
+// Start new or resume existing session.
 session_start();
 
-// Check if the user is already logged in.
+// Check if a user is logged in.
 if(isset($_COOKIE['username'])) {
+  
   // Redirect to another location.
   header('Location: dashboard.php');
   
   // Terminate the current script.
   exit();
+  
 }
 
 // Validate the username and password.
 if(isset($_POST['submitbutton'])) {
-  // Get the input username data.
-  $username = strtolower($_POST['username']);
   
-  // Get the input password data.
+  // Get the input username and password data.
+  $username = strtolower($_POST['username']);
   $password = $_POST['password'];
   
   // Check if the input fields are empty.
   if(empty($username) || empty($password)) {
-    // Session variable.
+    
+    // Session variable message.
     $_SESSION['message'] = 'Please enter your username and password.';
+    
   } else {
-    // Check if username and password are correct.
+    
+    // Check if username and password are valid.
     if($username == username && $password == password) {
-      // Set the cookie.
+      
+      // Check if 'Keep Me Logged In' checkbox is enabled.
       if(isset($_POST['kmli'])) {
+        
+        // Set it to 1 year.
         $session_time = time() + (60 * 60 * 24 * 365);
+      
       } else {
+        
+        // Set it to a short period of time.
         $session_time = time() + (60 * 60);
+        
       }
+      
+      // Set the cookies.
       setcookie('username', $username, $session_time, url_path);
       
       // Redirect to another location.
@@ -42,11 +55,16 @@ if(isset($_POST['submitbutton'])) {
       
       // Terminate the current script.
       exit();
+      
     } else {
-      // Session variable.
+      
+      // Session variable message.
       $_SESSION['message'] = 'Access denied.';
+      
     }
+    
   }
+  
 }
 ?>
 <!doctype html>
