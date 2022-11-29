@@ -2,12 +2,13 @@
 // Required file(s).
 require 'config.php';
 
-// Keep a session for notifications.
+// Start new or resume existing session.
 session_start();
 
-// Check if not a user is logged in.
+// Check if(not) a user is logged in.
 if(!isset($_COOKIE['username'])) {
-  // Session variable.
+  
+  // Session variable message.
   $_SESSION['message'] = 'Access is required.';
   
   // Redirect to another location.
@@ -15,6 +16,7 @@ if(!isset($_COOKIE['username'])) {
   
   // Terminate the current script.
   exit();
+  
 }
 ?>
 <!doctype html>
